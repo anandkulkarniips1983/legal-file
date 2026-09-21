@@ -1,0 +1,5 @@
+Plaintext
+requests
+pymupdf
+gspread
+google-auth
