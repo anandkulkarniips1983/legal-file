@@ -46,7 +46,7 @@ KEYWORDS = [
 
 # 3. Download Cause List PDF
 today_str = datetime.now().strftime("%d-%m-%Y")
-PDF_URL = "https://example-highcourt.gov.in/causelist/daily_cause_list.pdf"  # Replace with actual URL
+PDF_URL = "https://www2.allahabadhighcourt.in/clist/-99_0_CauseList23092026_All_21092026071229.pdf"  # Replace with actual URL
 
 print(f"Downloading PDF from {PDF_URL}...")
 response = requests.get(PDF_URL, headers={"User-Agent": "Mozilla/5.0"}, timeout=60)
