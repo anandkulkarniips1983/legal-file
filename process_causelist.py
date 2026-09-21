@@ -2,7 +2,7 @@ import os
 import re
 import json
 import requests
-import fitz  # PyMuPDF
+import pymupdf  # PyMuPDF
 import gspread
 from google.oauth2.service_account import Credentials
 from datetime import datetime
@@ -44,7 +44,7 @@ response = requests.get(PDF_URL, headers={"User-Agent": "Mozilla/5.0"}, timeout=
 response.raise_for_status()
 
 # 4. Parse PDF in-memory using PyMuPDF (Fast & no OCR limits)
-pdf_doc = fitz.open(stream=response.content, filetype="pdf")
+pdf_doc = pymupdf.open(stream=response.content, filetype="pdf")
 print(f"Total pages in cause list: {len(pdf_doc)}")
 
 # Load existing entries in Column C (snippets) to prevent duplicates
