@@ -2,9 +2,9 @@ name: Daily High Court Cause List Scraper
 
 on:
   schedule:
-    # Runs at 06:30 AM IST (which is 01:00 AM UTC), Monday through Friday
+    # Runs at 06:30 AM IST (01:00 AM UTC), Monday through Friday
     - cron: '0 1 * * 1-5'
-  workflow_dispatch: # Enables a manual "Run workflow" button in the GitHub UI
+  workflow_dispatch:
 
 jobs:
   scrape-and-sync:
@@ -18,12 +18,11 @@ jobs:
         uses: actions/setup-python@v5
         with:
           python-version: '3.11'
-          cache: 'pip'
 
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
-          pip install -r requirements.txt
+          pip install requests pymupdf gspread google-auth
 
       - name: Execute Cause List Parser
         env:
