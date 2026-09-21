@@ -37,7 +37,7 @@ KEYWORDS = [
 # 3. Download the PDF
 today_str = datetime.now().strftime("%d-%m-%Y")
 # Replace with the actual URL or dynamic daily URL pattern of your court's cause list
-PDF_URL = "https://example-highcourt.gov.in/causelist/daily_cause_list.pdf"
+PDF_URL = "https://www2.allahabadhighcourt.in/clist/-99_0_CauseList23092026_All_21092026071229.pdf"
 
 print(f"Downloading cause list from {PDF_URL}...")
 response = requests.get(PDF_URL, headers={"User-Agent": "Mozilla/5.0"}, timeout=60)
